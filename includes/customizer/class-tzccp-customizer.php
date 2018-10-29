@@ -67,10 +67,14 @@ class TZCCP_Customizer {
 			'secondary'             => false,
 			'secondary_light'       => false,
 			'accent'                => true,
+			'white'                 => true,
+			'light_gray'            => true,
+			'dark_gray'             => true,
+			'black'                 => true,
 			'red'                   => true,
 			'green'                 => true,
 			'blue'                  => true,
-			'yellow'                => true,
+			'yellow'                => false,
 			'orange'                => false,
 			'purple'                => false,
 			'brown'                 => false,
@@ -78,10 +82,14 @@ class TZCCP_Customizer {
 			'primary_dark_color'    => '#b7400d',
 			'primary_color'         => '#dd6633',
 			'primary_light_color'   => '#ff8c59',
-			'secondary_dark_color'  => '#4d0091',
-			'secondary_color'       => '#730db7',
-			'secondary_light_color' => '#9933dd',
+			'secondary_dark_color'  => '#730db7',
+			'secondary_color'       => '#9933dd',
+			'secondary_light_color' => '#bf59ff',
 			'accent_color'          => '#33bbdd',
+			'white_color'           => '#ffffff',
+			'light_gray_color'      => '#eeeeee',
+			'dark_gray_color'       => '#666666',
+			'black_color'           => '#151515',
 			'red_color'             => '#dd3333',
 			'green_color'           => '#81d742',
 			'blue_color'            => '#1e73be',
@@ -118,14 +126,14 @@ class TZCCP_Customizer {
 			'panel'    => 'tzccp_options_panel',
 		) );
 
-		$wp_customize->add_section( 'tzccp_primary_colors_section', array(
-			'title'    => esc_html__( 'Primary Colors', 'custom-color-palette' ),
+		$wp_customize->add_section( 'tzccp_grayscale_colors_section', array(
+			'title'    => esc_html__( 'Grayscale Colors', 'custom-color-palette' ),
 			'priority' => 20,
 			'panel'    => 'tzccp_options_panel',
 		) );
 
-		$wp_customize->add_section( 'tzccp_grayscale_colors_section', array(
-			'title'    => esc_html__( 'Grayscale Colors', 'custom-color-palette' ),
+		$wp_customize->add_section( 'tzccp_primary_colors_section', array(
+			'title'    => esc_html__( 'Primary Colors', 'custom-color-palette' ),
 			'priority' => 30,
 			'panel'    => 'tzccp_options_panel',
 		) );
@@ -141,18 +149,18 @@ class TZCCP_Customizer {
 		) );
 
 		$wp_customize->add_control( new TZCCP_Customize_Header_Control(
-			$wp_customize, 'tzccp_options[enable_primary_colors]', array(
+			$wp_customize, 'tzccp_options[enable_grayscale_colors]', array(
 				'label'    => esc_html__( 'Enable Colors', 'custom-color-palette' ),
-				'section'  => 'tzccp_primary_colors_section',
+				'section'  => 'tzccp_grayscale_colors_section',
 				'settings' => array(),
 				'priority' => 5,
 			)
 		) );
 
 		$wp_customize->add_control( new TZCCP_Customize_Header_Control(
-			$wp_customize, 'tzccp_options[enable_grayscale_colors]', array(
+			$wp_customize, 'tzccp_options[enable_primary_colors]', array(
 				'label'    => esc_html__( 'Enable Colors', 'custom-color-palette' ),
-				'section'  => 'tzccp_grayscale_colors_section',
+				'section'  => 'tzccp_primary_colors_section',
 				'settings' => array(),
 				'priority' => 5,
 			)
@@ -210,10 +218,11 @@ class TZCCP_Customizer {
 		$wp_customize->get_control( 'tzccp_options[secondary_dark]' )->priority  = 15;
 		$wp_customize->get_control( 'tzccp_options[secondary]' )->priority       = 25;
 		$wp_customize->get_control( 'tzccp_options[secondary_light]' )->priority = 35;
-		$wp_customize->get_control( 'tzccp_options[orange]' )->priority          = 85;
-		$wp_customize->get_control( 'tzccp_options[purple]' )->priority          = 95;
-		$wp_customize->get_control( 'tzccp_options[brown]' )->priority           = 105;
-		$wp_customize->get_control( 'tzccp_options[pink]' )->priority            = 115;
+		$wp_customize->get_control( 'tzccp_options[black]' )->priority           = 95;
+		$wp_customize->get_control( 'tzccp_options[orange]' )->priority          = 125;
+		$wp_customize->get_control( 'tzccp_options[purple]' )->priority          = 135;
+		$wp_customize->get_control( 'tzccp_options[brown]' )->priority           = 145;
+		$wp_customize->get_control( 'tzccp_options[pink]' )->priority            = 155;
 	}
 
 	/**

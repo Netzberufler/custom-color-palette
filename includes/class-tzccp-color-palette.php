@@ -103,6 +103,30 @@ class TZCCP_Color_Palette {
 				'section' => 'main_colors',
 			),
 			array(
+				'name'    => esc_html__( 'White', 'custom-color-palette' ),
+				'slug'    => 'white',
+				'class'   => 'ccp-white',
+				'section' => 'grayscale_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Light Gray', 'custom-color-palette' ),
+				'slug'    => 'light_gray',
+				'class'   => 'ccp-light-gray',
+				'section' => 'grayscale_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Dark Gray', 'custom-color-palette' ),
+				'slug'    => 'dark_gray',
+				'class'   => 'ccp-dark-gray',
+				'section' => 'grayscale_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Black', 'custom-color-palette' ),
+				'slug'    => 'black',
+				'class'   => 'ccp-black',
+				'section' => 'grayscale_colors',
+			),
+			array(
 				'name'    => esc_html__( 'Red', 'custom-color-palette' ),
 				'slug'    => 'red',
 				'class'   => 'ccp-red',

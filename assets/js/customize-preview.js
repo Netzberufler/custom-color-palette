@@ -11,6 +11,7 @@
 	var colors = [ 
 		'primary_dark', 'primary', 'primary_light', 'secondary_dark', 'secondary', 'secondary_light', 'accent',
 		'red', 'green', 'blue', 'yellow', 'orange', 'purple', 'brown', 'pink',
+		'white', 'light_gray', 'dark_gray', 'black',
 	];
 
 	jQuery.each( colors, function( index, color ) {

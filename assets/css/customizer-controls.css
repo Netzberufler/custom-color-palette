@@ -20,6 +20,10 @@
 #customize-control-tzccp_options-secondary_dark,
 #customize-control-tzccp_options-secondary,
 #customize-control-tzccp_options-secondary_light,
+#customize-control-tzccp_options-white,
+#customize-control-tzccp_options-light_gray,
+#customize-control-tzccp_options-dark_gray,
+#customize-control-tzccp_options-black,
 #customize-control-tzccp_options-red,
 #customize-control-tzccp_options-blue,
 #customize-control-tzccp_options-green,
@@ -34,6 +38,11 @@
 }
 
 #customize-control-tzccp_options-accent,
-#customize-control-tzccp_options-yellow {
+#customize-control-tzccp_options-black,
+#customize-control-tzccp_options-dark_gray,
+#customize-control-tzccp_options-yellow,
+#customize-control-tzccp_options-pink {
+	padding-bottom: 16px;
+	border-bottom: 1px solid #ddd;
 	margin-bottom: 16px;
 }
