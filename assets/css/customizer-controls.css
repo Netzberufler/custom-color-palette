@@ -19,13 +19,11 @@
 #customize-control-tzccp_options-primary_light,
 #customize-control-tzccp_options-secondary_dark,
 #customize-control-tzccp_options-secondary,
-#customize-control-tzccp_options-secondary_light,
-#customize-control-tzccp_options-accent {
+#customize-control-tzccp_options-secondary_light {
 	width: 50%;
 	clear: none;
 }
 
-/* Color Settings */
-#customize-control-tzccp_options-primary_dark_color {
-	margin-top: 16px;
+#customize-control-tzccp_options-accent {
+	margin-bottom: 16px;
 }

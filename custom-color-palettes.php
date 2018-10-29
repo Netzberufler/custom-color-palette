@@ -93,7 +93,6 @@ class ThemeZee_Custom_Color_Palette {
 
 		// Include Customizer settings.
 		require_once TZCCP_PLUGIN_DIR . '/includes/customizer/class-tzccp-customizer.php';
-		require_once TZCCP_PLUGIN_DIR . '/includes/customizer/sections/class-tzccp-main-color-settings.php';
 
 		// Include Color Classes.
 		require_once TZCCP_PLUGIN_DIR . '/includes/class-tzccp-color-palette.php';

@@ -35,7 +35,21 @@ class TZCCP_Color_Palette {
 	 * @return array $editor_settings
 	 */
 	static function add_color_palette( $editor_settings ) {
-		$editor_settings['colors'] = self::get_color_palette();
+		$plugin_options = TZCCP_Customizer::get_options();
+		$color_palette  = array();
+
+		foreach ( self::get_color_palette() as $color ) {
+			if ( true === $plugin_options[ $color['slug'] ] ) {
+				$color_palette[] = array(
+					'name'  => $color['name'],
+					'slug'  => $color['class'],
+					'color' => esc_html( $plugin_options[ $color['slug'] . '_color' ] ),
+				);
+			}
+		}
+
+		$editor_settings['colors'] = $color_palette;
+
 		return $editor_settings;
 	}
 
@@ -45,64 +59,50 @@ class TZCCP_Color_Palette {
 	 * @return array $color_palette
 	 */
 	static function get_color_palette() {
-		$plugin_options = TZCCP_Customizer::get_options();
-		$color_palette  = array();
-
-		if ( true === $plugin_options['primary_dark'] ) {
-			$color_palette[] = array(
-				'name'  => esc_html__( 'Primary Dark', 'custom-color-palette' ),
-				'slug'  => 'ccp-primary-dark',
-				'color' => esc_html( $plugin_options['primary_dark_color'] ),
-			);
-		}
-
-		if ( true === $plugin_options['primary'] ) {
-			$color_palette[] = array(
-				'name'  => esc_html__( 'Primary', 'custom-color-palette' ),
-				'slug'  => 'ccp-primary',
-				'color' => esc_html( $plugin_options['primary_color'] ),
-			);
-		}
-
-		if ( true === $plugin_options['primary_light'] ) {
-			$color_palette[] = array(
-				'name'  => esc_html__( 'Primary Light', 'custom-color-palette' ),
-				'slug'  => 'ccp-primary-light',
-				'color' => esc_html( $plugin_options['primary_light_color'] ),
-			);
-		}
-
-		if ( true === $plugin_options['secondary_dark'] ) {
-			$color_palette[] = array(
-				'name'  => esc_html__( 'Secondary Dark', 'custom-color-palette' ),
-				'slug'  => 'ccp-secondary-dark',
-				'color' => esc_html( $plugin_options['secondary_dark_color'] ),
-			);
-		}
-
-		if ( true === $plugin_options['secondary'] ) {
-			$color_palette[] = array(
-				'name'  => esc_html__( 'Secondary', 'custom-color-palette' ),
-				'slug'  => 'ccp-secondary',
-				'color' => esc_html( $plugin_options['secondary_color'] ),
-			);
-		}
-
-		if ( true === $plugin_options['secondary_light'] ) {
-			$color_palette[] = array(
-				'name'  => esc_html__( 'Secondary Light', 'custom-color-palette' ),
-				'slug'  => 'ccp-secondary-light',
-				'color' => esc_html( $plugin_options['secondary_light_color'] ),
-			);
-		}
-
-		if ( true === $plugin_options['accent'] ) {
-			$color_palette[] = array(
-				'name'  => esc_html__( 'Accent', 'custom-color-palette' ),
-				'slug'  => 'ccp-accent',
-				'color' => esc_html( $plugin_options['accent_color'] ),
-			);
-		}
+		$color_palette = array(
+			array(
+				'name'    => esc_html__( 'Primary Dark', 'custom-color-palette' ),
+				'slug'    => 'primary_dark',
+				'class'   => 'ccp-primary-dark',
+				'section' => 'main_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Primary Color', 'custom-color-palette' ),
+				'slug'    => 'primary',
+				'class'   => 'ccp-primary',
+				'section' => 'main_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Primary Light', 'custom-color-palette' ),
+				'slug'    => 'primary_light',
+				'class'   => 'ccp-primary-light',
+				'section' => 'main_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Secondary Dark', 'custom-color-palette' ),
+				'slug'    => 'secondary_dark',
+				'class'   => 'ccp-secondary-dark',
+				'section' => 'main_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Secondary Color', 'custom-color-palette' ),
+				'slug'    => 'secondary',
+				'class'   => 'ccp-secondary',
+				'section' => 'main_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Secondary Light', 'custom-color-palette' ),
+				'slug'    => 'secondary_light',
+				'class'   => 'ccp-secondary-light',
+				'section' => 'main_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Accent Color', 'custom-color-palette' ),
+				'slug'    => 'accent',
+				'class'   => 'ccp-accent',
+				'section' => 'main_colors',
+			),
+		);
 
 		return $color_palette;
 	}

@@ -23,7 +23,7 @@ class TZCCP_Customizer {
 	static function setup() {
 
 		// Include Headline Control.
-		require_once TZCCP_PLUGIN_DIR . '/includes/customizer/controls/class-tzccp-customize-header-control.php';
+		require_once TZCCP_PLUGIN_DIR . '/includes/customizer/class-tzccp-customize-header-control.php';
 
 		// Register Customizer options.
 		add_action( 'customize_register', array( __CLASS__, 'customize_register_options' ) );
@@ -85,6 +85,8 @@ class TZCCP_Customizer {
 	 * @param object $wp_customize / Customizer Object.
 	 */
 	static function customize_register_options( $wp_customize ) {
+		// Get Default Colors from settings.
+		$default_options = TZCCP_Customizer::get_default_options();
 
 		// Add Editor Colors Panel.
 		$wp_customize->add_panel( 'tzccp_options_panel', array(
@@ -111,6 +113,87 @@ class TZCCP_Customizer {
 			'priority' => 30,
 			'panel'    => 'tzccp_options_panel',
 		) );
+
+		// Add Enable Colors Headlines.
+		$wp_customize->add_control( new TZCCP_Customize_Header_Control(
+			$wp_customize, 'tzccp_options[enable_main_colors]', array(
+				'label'    => esc_html__( 'Enable Colors', 'custom-color-palette' ),
+				'section'  => 'tzccp_main_colors_section',
+				'settings' => array(),
+				'priority' => 5,
+			)
+		) );
+
+		$wp_customize->add_control( new TZCCP_Customize_Header_Control(
+			$wp_customize, 'tzccp_options[enable_primary_colors]', array(
+				'label'    => esc_html__( 'Enable Colors', 'custom-color-palette' ),
+				'section'  => 'tzccp_primary_colors_section',
+				'settings' => array(),
+				'priority' => 5,
+			)
+		) );
+
+		$wp_customize->add_control( new TZCCP_Customize_Header_Control(
+			$wp_customize, 'tzccp_options[enable_grayscale_colors]', array(
+				'label'    => esc_html__( 'Enable Colors', 'custom-color-palette' ),
+				'section'  => 'tzccp_grayscale_colors_section',
+				'settings' => array(),
+				'priority' => 5,
+			)
+		) );
+
+		// Generate Color Settings.
+		$priority = 0;
+		foreach ( TZCCP_Color_Palette::get_color_palette() as $color ) {
+
+			// Variables.
+			$checkbox_setting = $color['slug'];
+			$color_setting    = $color['slug'] . '_color';
+
+			// Controls.
+			$checkbox_control = 'tzccp_options[' . $checkbox_setting . ']';
+			$color_control    = 'tzccp_options[' . $color_setting . ']';
+			$section          = 'tzccp_' . $color['section'] . '_section';
+			$priority        += 10;
+
+			// Checkbox setting.
+			$wp_customize->add_setting( $checkbox_control, array(
+				'default'           => $default_options[ $checkbox_setting ],
+				'type'              => 'option',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => array( 'TZCCP_Customizer', 'sanitize_checkbox' ),
+			) );
+
+			$wp_customize->add_control( $checkbox_control, array(
+				'label'    => $color['name'],
+				'section'  => $section,
+				'settings' => $checkbox_control,
+				'type'     => 'checkbox',
+				'priority' => $priority,
+			) );
+
+			// Color setting.
+			$wp_customize->add_setting( $color_control , array(
+				'default'           => $default_options[ $color_setting ],
+				'type'              => 'option',
+				'transport'         => 'postMessage',
+				'sanitize_callback' => 'sanitize_hex_color',
+			) );
+
+			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
+				$color_control, array(
+					'label'    => $color['name'],
+					'section'  => $section,
+					'settings' => $color_control,
+					'priority' => $priority + 100,
+				)
+			) );
+		}
+
+		// Adjust Checkbox order.
+		$wp_customize->get_control( 'tzccp_options[secondary_dark]' )->priority  = 15;
+		$wp_customize->get_control( 'tzccp_options[secondary]' )->priority       = 25;
+		$wp_customize->get_control( 'tzccp_options[secondary_light]' )->priority = 35;
 	}
 
 	/**
