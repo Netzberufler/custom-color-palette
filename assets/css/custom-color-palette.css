@@ -19,7 +19,14 @@
 	--ccp-secondary-dark-color: #4d0091;
 	--ccp-secondary-color: #730db7;
 	--ccp-secondary-light-color: #9933dd;
-	--ccp-accent-color: #33bbdd;
+	--ccp-red-color: #dd3333;
+	--ccp-green-color: #81d742;
+	--ccp-blue-color: #1e73be;
+	--ccp-yellow-color: #eeee22;
+	--ccp-orange-color: #dd9933;
+	--ccp-purple-color: #8224e3;
+	--ccp-brown-color: #825b00;
+	--ccp-pink-color: #e500e5;
 }
 
 /*--------------------------------------------------------------
@@ -60,6 +67,45 @@
 	color: var(--ccp-accent-color);
 }
 
+.has-ccp-red-color {
+	color: #dd3333;
+	color: var(--ccp-red-color);
+}
+
+.has-ccp-green-color {
+	color: #1e73be;
+	color: var(--ccp-green-color);
+}
+
+.has-ccp-blue-color {
+	color: #dd3333;
+	color: var(--ccp-blue-color);
+}
+
+.has-ccp-yellow-color {
+	color: #eeee22;
+	color: var(--ccp-yellow-color);
+}
+
+.has-ccp-orange-color {
+	color: #dd9933;
+	color: var(--ccp-orange-color);
+}
+
+.has-ccp-purple-color {
+	color: #8224e3;
+	color: var(--ccp-purple-color);
+}
+
+.has-ccp-brown-color {
+	color: #825b00;
+	color: var(--ccp-brown-color);
+}
+
+.has-ccp-pink-color {
+	color: #e500e5;
+	color: var(--ccp-pink-color);
+}
 
 /*--------------------------------------------------------------
 # Background Colors
@@ -97,4 +143,44 @@
 .has-ccp-accent-background-color {
 	background-color: #33bbdd;
 	background-color: var(--ccp-accent-color);
+}
+
+.has-ccp-red-background-color {
+	background-color: #dd3333;
+	background-color: var(--ccp-red-color);
+}
+
+.has-ccp-green-background-color {
+	background-color: #1e73be;
+	background-color: var(--ccp-green-color);
+}
+
+.has-ccp-blue-background-color {
+	background-color: #dd3333;
+	background-color: var(--ccp-blue-color);
+}
+
+.has-ccp-yellow-background-color {
+	background-color: #eeee22;
+	background-color: var(--ccp-yellow-color);
+}
+
+.has-ccp-orange-background-color {
+	background-color: #dd9933;
+	background-color: var(--ccp-orange-color);
+}
+
+.has-ccp-purple-background-color {
+	background-color: #8224e3;
+	background-color: var(--ccp-purple-color);
+}
+
+.has-ccp-brown-background-color {
+	background-color: #825b00;
+	background-color: var(--ccp-brown-color);
+}
+
+.has-ccp-pink-background-color {
+	background-color: #e500e5;
+	background-color: var(--ccp-pink-color);
 }

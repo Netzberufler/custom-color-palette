@@ -9,7 +9,10 @@
 // Based on https://make.xwp.co/2016/07/24/dependently-contextual-customizer-controls/
 ( function( wp, $ ) {
 
-	var colors = [ 'primary_dark', 'primary', 'primary_light', 'secondary_dark', 'secondary', 'secondary_light', 'accent' ];
+	var colors = [ 
+		'primary_dark', 'primary', 'primary_light', 'secondary_dark', 'secondary', 'secondary_light', 'accent',
+		'red', 'green', 'blue', 'yellow', 'orange', 'purple', 'brown', 'pink',
+	];
 
 	jQuery.each( colors, function( index, color ) {
 		// Show Color Control.

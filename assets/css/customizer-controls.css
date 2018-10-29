@@ -19,11 +19,21 @@
 #customize-control-tzccp_options-primary_light,
 #customize-control-tzccp_options-secondary_dark,
 #customize-control-tzccp_options-secondary,
-#customize-control-tzccp_options-secondary_light {
+#customize-control-tzccp_options-secondary_light,
+#customize-control-tzccp_options-red,
+#customize-control-tzccp_options-blue,
+#customize-control-tzccp_options-green,
+#customize-control-tzccp_options-yellow,
+#customize-control-tzccp_options-orange,
+#customize-control-tzccp_options-purple,
+#customize-control-tzccp_options-brown,
+#customize-control-tzccp_options-pink {
 	width: 50%;
 	clear: none;
+	margin-bottom: 2px;
 }
 
-#customize-control-tzccp_options-accent {
+#customize-control-tzccp_options-accent,
+#customize-control-tzccp_options-yellow {
 	margin-bottom: 16px;
 }

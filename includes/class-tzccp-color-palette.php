@@ -102,6 +102,54 @@ class TZCCP_Color_Palette {
 				'class'   => 'ccp-accent',
 				'section' => 'main_colors',
 			),
+			array(
+				'name'    => esc_html__( 'Red', 'custom-color-palette' ),
+				'slug'    => 'red',
+				'class'   => 'ccp-red',
+				'section' => 'primary_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Green', 'custom-color-palette' ),
+				'slug'    => 'green',
+				'class'   => 'ccp-green',
+				'section' => 'primary_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Blue', 'custom-color-palette' ),
+				'slug'    => 'blue',
+				'class'   => 'ccp-blue',
+				'section' => 'primary_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Yellow', 'custom-color-palette' ),
+				'slug'    => 'yellow',
+				'class'   => 'ccp-yellow',
+				'section' => 'primary_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Orange', 'custom-color-palette' ),
+				'slug'    => 'orange',
+				'class'   => 'ccp-orange',
+				'section' => 'primary_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Purple', 'custom-color-palette' ),
+				'slug'    => 'purple',
+				'class'   => 'ccp-purple',
+				'section' => 'primary_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Brown', 'custom-color-palette' ),
+				'slug'    => 'brown',
+				'class'   => 'ccp-brown',
+				'section' => 'primary_colors',
+			),
+			array(
+				'name'    => esc_html__( 'Pink', 'custom-color-palette' ),
+				'slug'    => 'pink',
+				'class'   => 'ccp-pink',
+				'section' => 'primary_colors',
+			),
 		);
 
 		return $color_palette;
