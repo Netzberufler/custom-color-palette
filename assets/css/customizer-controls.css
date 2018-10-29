@@ -1,0 +1,14 @@
+/*
+ * Customizer Controls CSS
+ *
+ * Adjusts styling for plugin option controls in the Customizer
+ *
+ * @package Custom Color Palette
+ */
+
+/* Headline Controls */
+#customize-control-tzccp_options-enable_main_colors,
+#customize-control-tzccp_options-enable_primary_colors,
+#customize-control-tzccp_options-enable_grayscale_colors {
+	margin-bottom: 0;
+}

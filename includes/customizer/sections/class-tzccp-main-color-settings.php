@@ -36,13 +36,16 @@ class TZCCP_Main_Color_Settings {
 	 */
 	static function customize_register_options( $wp_customize ) {
 
+		// Get Default Colors from settings.
+		$default_options = TZCCP_Customizer::get_default_options();
+
 		// Add Enable Colors Headline.
 		$wp_customize->add_control( new TZCCP_Customize_Header_Control(
 			$wp_customize, 'tzccp_options[enable_main_colors]', array(
 				'label'    => esc_html__( 'Enable Colors', 'custom-color-palette' ),
 				'section'  => 'tzccp_main_colors_section',
 				'settings' => array(),
-				'priority' => 10,
+				'priority' => 5,
 			)
 		) );
 
@@ -59,9 +62,58 @@ class TZCCP_Main_Color_Settings {
 			'section'  => 'tzccp_main_colors_section',
 			'settings' => 'tzccp_options[primary]',
 			'type'     => 'checkbox',
+			'priority' => 10,
+		) );
+
+		// Primary Light checkbox.
+		$wp_customize->add_setting( 'tzccp_options[primary_light]', array(
+			'default'           => true,
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => array( 'TZCCP_Customizer', 'sanitize_checkbox' ),
+		) );
+
+		$wp_customize->add_control( 'tzccp_options[primary_light]', array(
+			'label'    => esc_html__( 'Primary Light', 'custom-color-palette' ),
+			'section'  => 'tzccp_main_colors_section',
+			'settings' => 'tzccp_options[primary_light]',
+			'type'     => 'checkbox',
 			'priority' => 20,
 		) );
 
+		// Primary Color setting.
+		$wp_customize->add_setting( 'tzccp_options[primary_color]', array(
+			'default'           => $default_options['primary_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'tzccp_options[primary_color]', array(
+				'label'    => esc_html__( 'Primary', 'custom-color-palette' ),
+				'section'  => 'tzccp_main_colors_section',
+				'settings' => 'tzccp_options[primary_color]',
+				'priority' => 110,
+			)
+		) );
+
+		// Primary Light Color setting.
+		$wp_customize->add_setting( 'tzccp_options[primary_light_color]', array(
+			'default'           => $default_options['primary_light_color'],
+			'type'              => 'option',
+			'transport'         => 'postMessage',
+			'sanitize_callback' => 'sanitize_hex_color',
+		) );
+
+		$wp_customize->add_control( new WP_Customize_Color_Control(
+			$wp_customize, 'tzccp_options[primary_light_color]', array(
+				'label'    => esc_html__( 'Primary Light', 'custom-color-palette' ),
+				'section'  => 'tzccp_main_colors_section',
+				'settings' => 'tzccp_options[primary_light_color]',
+				'priority' => 120,
+			)
+		) );
 	}
 }
 

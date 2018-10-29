@@ -29,6 +29,46 @@ class TZCCP_Customizer {
 
 		// Register Customizer options.
 		add_action( 'customize_register', array( __CLASS__, 'customize_register_options' ) );
+
+		// Enqueue Customizer Preview JS.
+		add_action( 'customize_preview_init', array( __CLASS__, 'customize_preview_js' ) );
+
+		// Enqueue Customizer Controls JS.
+		add_action( 'customize_controls_enqueue_scripts', array( __CLASS__, 'customizer_controls_js' ) );
+
+		// Enqueue Customizer Controls CSS.
+		add_action( 'customize_controls_print_styles', array( __CLASS__, 'customizer_controls_css' ) );
+	}
+
+	/**
+	 * Get saved user settings from database or plugin defaults.
+	 *
+	 * @return array $plugin_options
+	 */
+	static function get_options() {
+
+		// Merge plugin options array from database with default options array.
+		$plugin_options = wp_parse_args( get_option( 'tzccp_options', array() ), self::get_default_options() );
+
+		// Return theme options.
+		return $plugin_options;
+	}
+
+	/**
+	 * Returns the default settings.
+	 *
+	 * @return array
+	 */
+	static function get_default_options() {
+
+		$default_options = array(
+			'primary'             => true,
+			'primary_light'       => true,
+			'primary_color'       => '#ee0000',
+			'primary_light_color' => '#33ff33',
+		);
+
+		return $default_options;
 	}
 
 	/**
@@ -66,34 +106,24 @@ class TZCCP_Customizer {
 	}
 
 	/**
-	 * Get saved user settings from database or plugin defaults.
-	 *
-	 * @return array $plugin_options
+	 * Embed JS file to make Theme Customizer preview reload changes asynchronously.
 	 */
-	static function get_options() {
-
-		// Merge plugin options array from database with default options array.
-		$plugin_options = wp_parse_args( get_option( 'tzccp_options', array() ), self::get_default_options() );
-
-		// Return theme options.
-		return $plugin_options;
+	static function customize_preview_js() {
+		wp_enqueue_script( 'tzccp-customize-preview', TZCCP_PLUGIN_URL . 'assets/js/customize-preview.js', array( 'customize-preview' ), TZCCP_VERSION, true );
 	}
 
 	/**
-	 * Returns the default settings.
-	 *
-	 * @return array
+	 * Embed JS for Customizer Controls.
 	 */
-	static function get_default_options() {
+	static function customizer_controls_js() {
+		wp_enqueue_script( 'tzccp-customizer-controls', TZCCP_PLUGIN_URL . 'assets/js/customizer-controls.js', array(), TZCCP_VERSION, true );
+	}
 
-		$default_options = array(
-			'primary'             => true,
-			'primary_light'       => true,
-			'primary_color'       => '#ee0000',
-			'primary_light_color' => '#33ff33',
-		);
-
-		return $default_options;
+	/**
+	 * Embed CSS styles Customizer Controls.
+	 */
+	static function customizer_controls_css() {
+		wp_enqueue_style( 'tzccp-customizer-controls', TZCCP_PLUGIN_URL . 'assets/css/customizer-controls.css', array(), TZCCP_VERSION );
 	}
 
 	/**
