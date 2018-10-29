@@ -97,6 +97,7 @@ class ThemeZee_Custom_Color_Palette {
 
 		// Include Color Classes.
 		require_once TZCCP_PLUGIN_DIR . '/includes/class-tzccp-color-palette.php';
+		require_once TZCCP_PLUGIN_DIR . '/includes/class-tzccp-color-variables.php';
 	}
 
 	/**

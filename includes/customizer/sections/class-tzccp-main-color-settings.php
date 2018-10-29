@@ -2,9 +2,7 @@
 /**
  * TZCCP Main Color Settings Class
  *
- * Adds a new tab on the themezee plugins page and displays the settings page.
- *
- * @package ThemeZee Custom Archive Titles
+ * @package Custom Color Palette
  */
 
 // Exit if accessed directly.
