@@ -69,7 +69,7 @@ class TZCCP_Customizer {
 			'accent'                => true,
 			'primary_dark_color'    => '#b7400d',
 			'primary_color'         => '#dd6633',
-			'primary_light_color'   => '#ff8C59',
+			'primary_light_color'   => '#ff8c59',
 			'secondary_dark_color'  => '#4d0091',
 			'secondary_color'       => '#730db7',
 			'secondary_light_color' => '#9933dd',
