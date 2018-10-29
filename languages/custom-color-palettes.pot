@@ -1,0 +1,119 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Archive Titles\n"
+"Report-Msgid-Bugs-To: https://themezee.com/\n"
+"POT-Creation-Date: 2016-12-13 11:15+0100\n"
+"PO-Revision-Date: 2015-12-29 14:54+0100\n"
+"Last-Translator: \n"
+"Language-Team: ThemeZee <support@themezee.com>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: custom-archive-titles.php:154
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: custom-archive-titles.php:168
+msgid "Settings"
+msgstr ""
+
+#: includes/class-tzcat-settings-page.php:38
+#: includes/class-tzcat-settings-page.php:39
+#: includes/class-tzcat-settings-page.php:59
+msgid "Custom Archive Titles"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:87
+#, php-format
+msgid "Category: %s"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:88
+#, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:89
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:90
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:109
+msgid "Archive Titles"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:224
+msgid "Category Archives"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:225
+#, php-format
+msgid ""
+"Enter the title which is displayed on category archives. %s will be replaced "
+"with the category name."
+msgstr ""
+
+#: includes/class-tzcat-settings.php:232
+msgid "Tag Archives"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:233
+#, php-format
+msgid ""
+"Enter the title which is displayed on tag archives. %s will be replaced with "
+"the tag name."
+msgstr ""
+
+#: includes/class-tzcat-settings.php:240
+msgid "Author Archives"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:241
+#, php-format
+msgid ""
+"Enter the title which is displayed on author archives. %s will be replaced "
+"with the author name."
+msgstr ""
+
+#: includes/class-tzcat-settings.php:248
+msgid "Monthly Archives"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:249
+#, php-format
+msgid ""
+"Enter the title which is displayed on monthly archives. %s will be replaced "
+"with the name of the month."
+msgstr ""
+
+#: includes/class-tzcat-settings.php:256
+msgid "Reset to default values"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:378
+msgid "Reset"
+msgstr ""
+
+#: includes/class-tzcat-settings.php:393
+#, php-format
+msgid ""
+"The callback function used for the <strong>%s</strong> setting is missing."
+msgstr ""
