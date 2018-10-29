@@ -9,61 +9,17 @@
 // Based on https://make.xwp.co/2016/07/24/dependently-contextual-customizer-controls/
 ( function( wp, $ ) {
 
-	// Primary Dark Color.
-	wp.customize( 'tzccp_options[primary_dark]', function( setting ) {
-		var showControl = function( control ) {
-			setupControl( setting, control );
-		}
-		wp.customize.control( 'tzccp_options[primary_dark_color]', showControl );
-	} );
+	var colors = [ 'primary_dark', 'primary', 'primary_light', 'secondary_dark', 'secondary', 'secondary_light', 'accent' ];
 
-	// Primary Color.
-	wp.customize( 'tzccp_options[primary]', function( setting ) {
-		var showControl = function( control ) {
-			setupControl( setting, control );
-		}
-		wp.customize.control( 'tzccp_options[primary_color]', showControl );
-	} );
-
-	// Primary Light Color.
-	wp.customize( 'tzccp_options[primary_light]', function( setting ) {
-		var showControl = function( control ) {
-			setupControl( setting, control );
-		}
-		wp.customize.control( 'tzccp_options[primary_light_color]', showControl );
-	} );
-
-	// Secondary Dark Color.
-	wp.customize( 'tzccp_options[secondary_dark]', function( setting ) {
-		var showControl = function( control ) {
-			setupControl( setting, control );
-		}
-		wp.customize.control( 'tzccp_options[secondary_dark_color]', showControl );
-	} );
-
-	// Secondary Color.
-	wp.customize( 'tzccp_options[secondary]', function( setting ) {
-		var showControl = function( control ) {
-			setupControl( setting, control );
-		}
-		wp.customize.control( 'tzccp_options[secondary_color]', showControl );
-	} );
-
-	// Secondary Light Color.
-	wp.customize( 'tzccp_options[secondary_light]', function( setting ) {
-		var showControl = function( control ) {
-			setupControl( setting, control );
-		}
-		wp.customize.control( 'tzccp_options[secondary_light_color]', showControl );
-	} );
-
-	// Accent Color.
-	wp.customize( 'tzccp_options[accent]', function( setting ) {
-		var showControl = function( control ) {
-			setupControl( setting, control );
-		}
-		wp.customize.control( 'tzccp_options[accent_color]', showControl );
-	} );
+	jQuery.each( colors, function( index, color ) {
+		// Show Color Control.
+		wp.customize( 'tzccp_options[' + color + ']', function( setting ) {
+			var showControl = function( control ) {
+				setupControl( setting, control );
+			}
+			wp.customize.control( 'tzccp_options[' + color + '_color]', showControl );
+		} );
+	});
 
 	function setupControl( setting, control ) {
 		var setActiveState, isDisplayed;

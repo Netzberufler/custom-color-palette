@@ -15,7 +15,7 @@
 :root {
 	--ccp-primary-dark-color: #b7400d;
 	--ccp-primary-color: #dd6633;
-	--ccp-primary-light-color: #ff8C59;
+	--ccp-primary-light-color: #ff8c59;
 	--ccp-secondary-dark-color: #4d0091;
 	--ccp-secondary-color: #730db7;
 	--ccp-secondary-light-color: #9933dd;
@@ -36,7 +36,7 @@
 }
 
 .has-ccp-primary-light-color {
-	color: #ff8C59;
+	color: #ff8c59;
 	color: var(--ccp-primary-light-color);
 }
 
@@ -75,7 +75,7 @@
 }
 
 .has-ccp-primary-light-background-color {
-	background-color: #ff8C59;
+	background-color: #ff8c59;
 	background-color: var(--ccp-primary-light-color);
 }
 

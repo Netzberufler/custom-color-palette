@@ -173,7 +173,7 @@ class TZCCP_Customizer {
 			) );
 
 			// Color setting.
-			$wp_customize->add_setting( $color_control , array(
+			$wp_customize->add_setting( $color_control, array(
 				'default'           => $default_options[ $color_setting ],
 				'type'              => 'option',
 				'transport'         => 'postMessage',
