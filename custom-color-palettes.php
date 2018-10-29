@@ -1,17 +1,17 @@
 <?php
 /*
-Plugin Name: Custom Color Palettes
-Plugin URI: https://themezee.com/plugins/custom-color-palettes/
+Plugin Name: Custom Color Palette
+Plugin URI: https://themezee.com/plugins/custom-color-palette/
 Description: A small and simple plugin to adjust the default color palette of the new WordPress Gutenberg Editor
 Author: ThemeZee
 Author URI: https://themezee.com/
 Version: 1.0
-Text Domain: custom-color-palettes
+Text Domain: custom-color-palette
 Domain Path: /languages/
 License: GPL v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-ThemeZee Custom Color Palettes
+ThemeZee Custom Color Palette
 Copyright(C) 2018, ThemeZee.com - support@themezee.com
 
 */
@@ -22,18 +22,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Main ThemeZee_Custom_Color_Palettes Class
+ * Main ThemeZee_Custom_Color_Palette Class
  *
- * @package ThemeZee Custom Color Palettes
+ * @package ThemeZee Custom Color Palette
  */
-class ThemeZee_Custom_Color_Palettes {
+class ThemeZee_Custom_Color_Palette {
 
 	/**
 	 * Call all Functions to setup the Plugin
 	 *
-	 * @uses ThemeZee_Custom_Color_Palettes::constants() Setup the constants needed
-	 * @uses ThemeZee_Custom_Color_Palettes::includes() Include the required files
-	 * @uses ThemeZee_Custom_Color_Palettes::setup_actions() Setup the hooks and actions
+	 * @uses ThemeZee_Custom_Color_Palette::constants() Setup the constants needed
+	 * @uses ThemeZee_Custom_Color_Palette::includes() Include the required files
+	 * @uses ThemeZee_Custom_Color_Palette::setup_actions() Setup the hooks and actions
 	 * @return void
 	 */
 	static function setup() {
@@ -60,7 +60,7 @@ class ThemeZee_Custom_Color_Palettes {
 	static function constants() {
 
 		// Define Plugin Name.
-		define( 'TZCCP_NAME', 'Custom Color Palettes' );
+		define( 'TZCCP_NAME', 'Custom Color Palette' );
 
 		// Define Version Number.
 		define( 'TZCCP_VERSION', '1.0' );
@@ -83,7 +83,7 @@ class ThemeZee_Custom_Color_Palettes {
 	 */
 	static function translation() {
 
-		load_plugin_textdomain( 'custom-color-palettes', false, dirname( plugin_basename( TZCCP_PLUGIN_FILE ) ) . '/languages/' );
+		load_plugin_textdomain( 'custom-color-palette', false, dirname( plugin_basename( TZCCP_PLUGIN_FILE ) ) . '/languages/' );
 
 	}
 
@@ -94,9 +94,8 @@ class ThemeZee_Custom_Color_Palettes {
 	 */
 	static function includes() {
 
-		// Include Settings Classes.
-		#require_once TZCCP_PLUGIN_DIR . '/includes/class-tzcat-settings.php';
-		#require_once TZCCP_PLUGIN_DIR . '/includes/class-tzcat-settings-page.php';
+		// Include Color Classes.
+		require_once TZCCP_PLUGIN_DIR . '/includes/class-tzccp-color-palette.php';
 
 	}
 
@@ -111,6 +110,9 @@ class ThemeZee_Custom_Color_Palettes {
 		// Enqueue Plugin Stylesheet.
 		add_action( 'wp_enqueue_scripts', array( __CLASS__, 'enqueue_styles' ) );
 
+		// Enqueue Editor Stylesheet.
+		add_action( 'enqueue_block_editor_assets', array( __CLASS__, 'enqueue_editor_styles' ) );
+
 		// Add Settings link to Plugin actions.
 		add_filter( 'plugin_action_links_' . plugin_basename( TZCCP_PLUGIN_FILE ), array( __CLASS__, 'plugin_action_links' ) );
 
@@ -124,7 +126,19 @@ class ThemeZee_Custom_Color_Palettes {
 	static function enqueue_styles() {
 
 		// Enqueue Color Palette Stylesheet.
-		wp_enqueue_style( 'themezee-custom-color-palettes', TZCCP_PLUGIN_URL . 'assets/css/custom-color-palettes.css', array(), TZCCP_VERSION );
+		wp_enqueue_style( 'themezee-custom-color-palette', TZCCP_PLUGIN_URL . 'assets/css/custom-color-palette.css', array(), TZCCP_VERSION );
+
+	}
+
+	/**
+	 * Enqueue Editor Styles
+	 *
+	 * @return void
+	 */
+	static function enqueue_editor_styles() {
+
+		// Enqueue Color Palette styles in Editor.
+		wp_enqueue_style( 'themezee-custom-color-palette-editor', TZCCP_PLUGIN_URL . 'assets/css/custom-color-palette.css', array(), TZCCP_VERSION );
 
 	}
 
@@ -135,11 +149,11 @@ class ThemeZee_Custom_Color_Palettes {
 	 */
 	static function plugin_action_links( $actions ) {
 
-		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=themezee-custom-color-palettes' ), __( 'Settings', 'custom-color-palettes' ) ) );
+		$settings_link = array( 'settings' => sprintf( '<a href="%s">%s</a>', admin_url( 'options-general.php?page=themezee-custom-color-palette' ), __( 'Settings', 'custom-color-palette' ) ) );
 
 		return array_merge( $settings_link, $actions );
 	}
 }
 
 // Run Plugin.
-ThemeZee_Custom_Color_Palettes::setup();
+ThemeZee_Custom_Color_Palette::setup();

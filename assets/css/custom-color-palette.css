@@ -1,0 +1,44 @@
+/*
+ * Custom Color Palette
+ * https://themezee.com/plugins/custom-color-palette/
+ *
+ * Copyright(C) 2018, ThemeZee.com - support@themezee.com
+ * License: GPL v3
+ * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ *
+ * @package Custom Color Palette
+ */
+
+/*--------------------------------------------------------------
+# Color Variables
+---------------------------------------------------------------- */
+:root {
+	--ccp-primary-color: #ee0000;
+	--ccp-primary-light-color: #33ff33;
+}
+
+/*--------------------------------------------------------------
+# Text Colors
+---------------------------------------------------------------- */
+.has-ccp-primary-color {
+	color: #ee0000;
+	color: var(--ccp-primary-color);
+}
+
+.has-ccp-primary-light-color {
+	color: #33ff33;
+	color: var(--ccp-primary-light-color);
+}
+
+/*--------------------------------------------------------------
+# Background Colors
+---------------------------------------------------------------- */
+.has-ccp-primary-background-color {
+	background-color: #ee0000;
+	background-color: var(--ccp-primary-color);
+}
+
+.has-ccp-primary-light-background-color {
+	background-color: #33ff33;
+	background-color: var(--ccp-primary-light-color);
+}
