@@ -45,19 +45,24 @@ class TZCCP_Color_Palette {
 	 * @return array $color_palette
 	 */
 	static function get_color_palette() {
+		$plugin_options = TZCCP_Customizer::get_options();
+		$color_palette  = array();
 
-		$color_palette = array(
-			array(
+		if ( true === $plugin_options['primary'] ) {
+			$color_palette[] = array(
 				'name'  => esc_html__( 'Primary', 'custom-color-palette' ),
 				'slug'  => 'ccp-primary',
-				'color' => '#ee0000',
-			),
-			array(
+				'color' => esc_html( $plugin_options['primary_color'] ),
+			);
+		}
+
+		if ( true === $plugin_options['primary_light'] ) {
+			$color_palette[] = array(
 				'name'  => esc_html__( 'Primary Light', 'custom-color-palette' ),
 				'slug'  => 'ccp-primary-light',
-				'color' => '#33ff33',
-			),
-		);
+				'color' => esc_html( $plugin_options['primary_light_color'] ),
+			);
+		}
 
 		return $color_palette;
 	}

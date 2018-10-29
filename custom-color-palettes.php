@@ -49,7 +49,6 @@ class ThemeZee_Custom_Color_Palette {
 
 		// Setup Action Hooks.
 		self::setup_actions();
-
 	}
 
 	/**
@@ -73,7 +72,6 @@ class ThemeZee_Custom_Color_Palette {
 
 		// Plugin Root File.
 		define( 'TZCCP_PLUGIN_FILE', __FILE__ );
-
 	}
 
 	/**
@@ -84,7 +82,6 @@ class ThemeZee_Custom_Color_Palette {
 	static function translation() {
 
 		load_plugin_textdomain( 'custom-color-palette', false, dirname( plugin_basename( TZCCP_PLUGIN_FILE ) ) . '/languages/' );
-
 	}
 
 	/**
@@ -94,9 +91,12 @@ class ThemeZee_Custom_Color_Palette {
 	 */
 	static function includes() {
 
+		// Include Customizer settings.
+		require_once TZCCP_PLUGIN_DIR . '/includes/customizer/class-tzccp-customizer.php';
+		require_once TZCCP_PLUGIN_DIR . '/includes/customizer/sections/class-tzccp-main-color-settings.php';
+
 		// Include Color Classes.
 		require_once TZCCP_PLUGIN_DIR . '/includes/class-tzccp-color-palette.php';
-
 	}
 
 	/**
@@ -115,7 +115,6 @@ class ThemeZee_Custom_Color_Palette {
 
 		// Add Settings link to Plugin actions.
 		add_filter( 'plugin_action_links_' . plugin_basename( TZCCP_PLUGIN_FILE ), array( __CLASS__, 'plugin_action_links' ) );
-
 	}
 
 	/**
@@ -127,7 +126,6 @@ class ThemeZee_Custom_Color_Palette {
 
 		// Enqueue Color Palette Stylesheet.
 		wp_enqueue_style( 'themezee-custom-color-palette', TZCCP_PLUGIN_URL . 'assets/css/custom-color-palette.css', array(), TZCCP_VERSION );
-
 	}
 
 	/**
@@ -139,7 +137,6 @@ class ThemeZee_Custom_Color_Palette {
 
 		// Enqueue Color Palette styles in Editor.
 		wp_enqueue_style( 'themezee-custom-color-palette-editor', TZCCP_PLUGIN_URL . 'assets/css/custom-color-palette.css', array(), TZCCP_VERSION );
-
 	}
 
 	/**
