@@ -60,10 +60,20 @@ class TZCCP_Customizer {
 	static function get_default_options() {
 
 		$default_options = array(
-			'primary'             => true,
-			'primary_light'       => true,
-			'primary_color'       => '#ee0000',
-			'primary_light_color' => '#33ff33',
+			'primary_dark'          => true,
+			'primary'               => true,
+			'primary_light'         => true,
+			'secondary_dark'        => false,
+			'secondary'             => false,
+			'secondary_light'       => false,
+			'accent'                => true,
+			'primary_dark_color'    => '#b7400d',
+			'primary_color'         => '#dd6633',
+			'primary_light_color'   => '#ff8C59',
+			'secondary_dark_color'  => '#4d0091',
+			'secondary_color'       => '#730db7',
+			'secondary_light_color' => '#9933dd',
+			'accent_color'          => '#33bbdd',
 		);
 
 		return $default_options;

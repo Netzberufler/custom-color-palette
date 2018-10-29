@@ -57,6 +57,11 @@ class TZCCP_Color_Variables {
 		// Color Variables.
 		$color_variables = '';
 
+		// Set Primary Dark Color.
+		if ( $plugin_options['primary_dark_color'] !== $default_options['primary_dark_color'] ) {
+			$color_variables .= '--ccp-primary-dark-color: ' . $plugin_options['primary_dark_color'] . ';';
+		}
+
 		// Set Primary Color.
 		if ( $plugin_options['primary_color'] !== $default_options['primary_color'] ) {
 			$color_variables .= '--ccp-primary-color: ' . $plugin_options['primary_color'] . ';';
@@ -65,6 +70,26 @@ class TZCCP_Color_Variables {
 		// Set Primary Light Color.
 		if ( $plugin_options['primary_light_color'] !== $default_options['primary_light_color'] ) {
 			$color_variables .= '--ccp-primary-light-color: ' . $plugin_options['primary_light_color'] . ';';
+		}
+
+		// Set Secondary Dark Color.
+		if ( $plugin_options['secondary_dark_color'] !== $default_options['secondary_dark_color'] ) {
+			$color_variables .= '--ccp-secondary-dark-color: ' . $plugin_options['secondary_dark_color'] . ';';
+		}
+
+		// Set Secondary Color.
+		if ( $plugin_options['secondary_color'] !== $default_options['secondary_color'] ) {
+			$color_variables .= '--ccp-secondary-color: ' . $plugin_options['secondary_color'] . ';';
+		}
+
+		// Set Secondary Light Color.
+		if ( $plugin_options['secondary_light_color'] !== $default_options['secondary_light_color'] ) {
+			$color_variables .= '--ccp-secondary-light-color: ' . $plugin_options['secondary_light_color'] . ';';
+		}
+
+		// Set Accent Color.
+		if ( $plugin_options['accent_color'] !== $default_options['accent_color'] ) {
+			$color_variables .= '--ccp-accent-color: ' . $plugin_options['accent_color'] . ';';
 		}
 
 		// Return if no color variables were defined.

@@ -13,32 +13,88 @@
 # Color Variables
 ---------------------------------------------------------------- */
 :root {
-	--ccp-primary-color: #ee0000;
-	--ccp-primary-light-color: #33ff33;
+	--ccp-primary-dark-color: #b7400d;
+	--ccp-primary-color: #dd6633;
+	--ccp-primary-light-color: #ff8C59;
+	--ccp-secondary-dark-color: #4d0091;
+	--ccp-secondary-color: #730db7;
+	--ccp-secondary-light-color: #9933dd;
+	--ccp-accent-color: #33bbdd;
 }
 
 /*--------------------------------------------------------------
 # Text Colors
 ---------------------------------------------------------------- */
+.has-ccp-primary-dark-color {
+	color: #b7400d;
+	color: var(--ccp-primary-dark-color);
+}
+
 .has-ccp-primary-color {
-	color: #ee0000;
+	color: #dd6633;
 	color: var(--ccp-primary-color);
 }
 
 .has-ccp-primary-light-color {
-	color: #33ff33;
+	color: #ff8C59;
 	color: var(--ccp-primary-light-color);
 }
+
+.has-ccp-secondary-dark-color {
+	color: #4d0091;
+	color: var(--ccp-secondary-dark-color);
+}
+
+.has-ccp-secondary-color {
+	color: #730db7;
+	color: var(--ccp-secondary-color);
+}
+
+.has-ccp-secondary-light-color {
+	color: #9933dd;
+	color: var(--ccp-secondary-light-color);
+}
+
+.has-ccp-accent-color {
+	color: #33bbdd;
+	color: var(--ccp-accent-color);
+}
+
 
 /*--------------------------------------------------------------
 # Background Colors
 ---------------------------------------------------------------- */
+.has-ccp-primary-dark-background-color {
+	background-color: #b7400d;
+	background-color: var(--ccp-primary-dark-color);
+}
+
 .has-ccp-primary-background-color {
-	background-color: #ee0000;
+	background-color: #dd6633;
 	background-color: var(--ccp-primary-color);
 }
 
 .has-ccp-primary-light-background-color {
-	background-color: #33ff33;
+	background-color: #ff8C59;
 	background-color: var(--ccp-primary-light-color);
+}
+
+.has-ccp-secondary-dark-background-color {
+	background-color: #4d0091;
+	background-color: var(--ccp-secondary-dark-color);
+}
+
+.has-ccp-secondary-background-color {
+	background-color: #730db7;
+	background-color: var(--ccp-secondary-color);
+}
+
+.has-ccp-secondary-light-background-color {
+	background-color: #9933dd;
+	background-color: var(--ccp-secondary-light-color);
+}
+
+.has-ccp-accent-background-color {
+	background-color: #33bbdd;
+	background-color: var(--ccp-accent-color);
 }

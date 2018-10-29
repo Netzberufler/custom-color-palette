@@ -12,3 +12,20 @@
 #customize-control-tzccp_options-enable_grayscale_colors {
 	margin-bottom: 0;
 }
+
+/* Checkbox Controls */
+#customize-control-tzccp_options-primary_dark,
+#customize-control-tzccp_options-primary,
+#customize-control-tzccp_options-primary_light,
+#customize-control-tzccp_options-secondary_dark,
+#customize-control-tzccp_options-secondary,
+#customize-control-tzccp_options-secondary_light,
+#customize-control-tzccp_options-accent {
+	width: 50%;
+	clear: none;
+}
+
+/* Color Settings */
+#customize-control-tzccp_options-primary_dark_color {
+	margin-top: 16px;
+}
