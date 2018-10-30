@@ -14,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * TZCCP Customizer Class
  */
 class TZCCP_Customizer {
-
 	/**
 	 * Setup the Customizer class
 	 *
@@ -55,7 +54,7 @@ class TZCCP_Customizer {
 	/**
 	 * Returns the default settings.
 	 *
-	 * @return array
+	 * @return array $default_options
 	 */
 	static function get_default_options() {
 
@@ -112,14 +111,14 @@ class TZCCP_Customizer {
 		// Get Default Colors from settings.
 		$default_options = TZCCP_Customizer::get_default_options();
 
-		// Add Editor Colors Panel.
+		// Add Color Palette Panel.
 		$wp_customize->add_panel( 'tzccp_options_panel', array(
-			'priority'   => 80,
+			'priority'   => 500,
 			'capability' => 'edit_theme_options',
 			'title'      => esc_html__( 'Custom Color Palette', 'custom-color-palette' ),
 		) );
 
-		// Add Color Sections.
+		// Add Color Palette Sections.
 		$wp_customize->add_section( 'tzccp_main_colors_section', array(
 			'title'    => esc_html__( 'Main Colors', 'custom-color-palette' ),
 			'priority' => 10,
@@ -253,7 +252,6 @@ class TZCCP_Customizer {
 	 * @return bool Whether the checkbox is checked.
 	 */
 	static function sanitize_checkbox( $checked ) {
-
 		// Boolean check.
 		return ( ( isset( $checked ) && true === $checked ) ? true : false );
 	}

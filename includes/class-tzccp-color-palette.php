@@ -2,9 +2,7 @@
 /**
  * TZCCP Color Palette Class
  *
- * Adds a new tab on the themezee plugins page and displays the settings page.
- *
- * @package ThemeZee Custom Archive Titles
+ * @package Custom Color Palette
  */
 
 // Exit if accessed directly.
@@ -16,7 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  * TZCCP Color Palette Class
  */
 class TZCCP_Color_Palette {
-
 	/**
 	 * Setup the Color Palette class
 	 *
@@ -26,7 +23,6 @@ class TZCCP_Color_Palette {
 
 		// Add new color palette to Gutenberg.
 		add_filter( 'block_editor_settings', array( __CLASS__, 'add_color_palette' ) );
-
 	}
 
 	/**
@@ -38,6 +34,7 @@ class TZCCP_Color_Palette {
 		$plugin_options = TZCCP_Customizer::get_options();
 		$color_palette  = array();
 
+		// Loop through colors and add them to color palette if enabled in Customizer.
 		foreach ( self::get_color_palette() as $color ) {
 			if ( true === $plugin_options[ $color['slug'] ] ) {
 				$color_palette[] = array(
@@ -48,6 +45,7 @@ class TZCCP_Color_Palette {
 			}
 		}
 
+		// Add color palette to editor settings.
 		$editor_settings['colors'] = $color_palette;
 
 		return $editor_settings;

@@ -1,9 +1,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Custom Archive Titles\n"
+"Project-Id-Version: Custom Color Palette\n"
 "Report-Msgid-Bugs-To: https://themezee.com/\n"
-"POT-Creation-Date: 2016-12-13 11:15+0100\n"
+"POT-Creation-Date: 2018-10-30 11:19+0100\n"
 "PO-Revision-Date: 2015-12-29 14:54+0100\n"
 "Last-Translator: \n"
 "Language-Team: ThemeZee <support@themezee.com>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
 "_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
 "esc_html_x:1,2c\n"
@@ -21,99 +21,104 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: custom-archive-titles.php:154
-msgctxt "monthly archives date format"
-msgid "F Y"
-msgstr ""
-
-#: custom-archive-titles.php:168
+#: custom-color-palette.php:142
 msgid "Settings"
 msgstr ""
 
-#: includes/class-tzcat-settings-page.php:38
-#: includes/class-tzcat-settings-page.php:39
-#: includes/class-tzcat-settings-page.php:59
-msgid "Custom Archive Titles"
+#: includes/class-tzccp-color-palette.php:62
+msgid "Primary Dark"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:87
-#, php-format
-msgid "Category: %s"
+#: includes/class-tzccp-color-palette.php:68
+msgid "Primary Color"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:88
-#, php-format
-msgid "Tag: %s"
+#: includes/class-tzccp-color-palette.php:74
+msgid "Primary Light"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:89
-#, php-format
-msgid "Author: %s"
+#: includes/class-tzccp-color-palette.php:80
+msgid "Secondary Dark"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:90
-#, php-format
-msgid "Month: %s"
+#: includes/class-tzccp-color-palette.php:86
+msgid "Secondary Color"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:109
-msgid "Archive Titles"
+#: includes/class-tzccp-color-palette.php:92
+msgid "Secondary Light"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:224
-msgid "Category Archives"
+#: includes/class-tzccp-color-palette.php:98
+msgid "Accent Color"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:225
-#, php-format
-msgid ""
-"Enter the title which is displayed on category archives. %s will be replaced "
-"with the category name."
+#: includes/class-tzccp-color-palette.php:104
+msgid "White"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:232
-msgid "Tag Archives"
+#: includes/class-tzccp-color-palette.php:110
+msgid "Light Gray"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:233
-#, php-format
-msgid ""
-"Enter the title which is displayed on tag archives. %s will be replaced with "
-"the tag name."
+#: includes/class-tzccp-color-palette.php:116
+msgid "Dark Gray"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:240
-msgid "Author Archives"
+#: includes/class-tzccp-color-palette.php:122
+msgid "Black"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:241
-#, php-format
-msgid ""
-"Enter the title which is displayed on author archives. %s will be replaced "
-"with the author name."
+#: includes/class-tzccp-color-palette.php:128
+msgid "Red"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:248
-msgid "Monthly Archives"
+#: includes/class-tzccp-color-palette.php:134
+msgid "Green"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:249
-#, php-format
-msgid ""
-"Enter the title which is displayed on monthly archives. %s will be replaced "
-"with the name of the month."
+#: includes/class-tzccp-color-palette.php:140
+msgid "Blue"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:256
-msgid "Reset to default values"
+#: includes/class-tzccp-color-palette.php:146
+msgid "Yellow"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:378
-msgid "Reset"
+#: includes/class-tzccp-color-palette.php:152
+msgid "Orange"
 msgstr ""
 
-#: includes/class-tzcat-settings.php:393
-#, php-format
-msgid ""
-"The callback function used for the <strong>%s</strong> setting is missing."
+#: includes/class-tzccp-color-palette.php:158
+msgid "Purple"
+msgstr ""
+
+#: includes/class-tzccp-color-palette.php:164
+msgid "Brown"
+msgstr ""
+
+#: includes/class-tzccp-color-palette.php:170
+msgid "Pink"
+msgstr ""
+
+#: includes/customizer/class-tzccp-customizer.php:118
+msgid "Custom Color Palette"
+msgstr ""
+
+#: includes/customizer/class-tzccp-customizer.php:123
+msgid "Main Colors"
+msgstr ""
+
+#: includes/customizer/class-tzccp-customizer.php:129
+msgid "Grayscale Colors"
+msgstr ""
+
+#: includes/customizer/class-tzccp-customizer.php:135
+msgid "Primary Colors"
+msgstr ""
+
+#: includes/customizer/class-tzccp-customizer.php:143
+#: includes/customizer/class-tzccp-customizer.php:152
+#: includes/customizer/class-tzccp-customizer.php:161
+msgid "Enable Colors"
 msgstr ""

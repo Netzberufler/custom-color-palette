@@ -14,6 +14,7 @@
 		'white', 'light_gray', 'dark_gray', 'black',
 	];
 
+	// Change Color CSS variable for each color control in the live preview of the Customizer.
 	jQuery.each( colors, function( index, color ) {
 		// Preview Color.
 		wp.customize( 'tzccp_options[' + color + '_color]', function( value ) {

@@ -1,12 +1,11 @@
 /**
  * Customizer Controls JS
  *
- * Adds Javascript for Customizer Controls.
+ * Show color control only if checkbox control is enabled.
  *
  * @package Custom Color Palette
  */
 
-// Based on https://make.xwp.co/2016/07/24/dependently-contextual-customizer-controls/
 ( function( wp, $ ) {
 
 	var colors = [ 
@@ -15,6 +14,7 @@
 		'white', 'light_gray', 'dark_gray', 'black',
 	];
 
+	// Loop through color controls and only display them if enabled with checkbox control.
 	jQuery.each( colors, function( index, color ) {
 		// Show Color Control.
 		wp.customize( 'tzccp_options[' + color + ']', function( setting ) {
@@ -25,6 +25,8 @@
 		} );
 	});
 
+	// Setup Color Control.
+	// Based on https://make.xwp.co/2016/07/24/dependently-contextual-customizer-controls/
 	function setupControl( setting, control ) {
 		var setActiveState, isDisplayed;
 		isDisplayed = function() {
