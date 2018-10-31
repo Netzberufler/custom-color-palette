@@ -1,4 +1,4 @@
-=== Custom Color Palette ===
+=== Custom Color Palette for Gutenberg ===
 Author URI: https://themezee.com
 Plugin URI: https://themezee.com/plugins/custom-color-palette/
 Contributors: themezee
