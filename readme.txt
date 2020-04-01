@@ -4,7 +4,7 @@ Plugin URI: https://themezee.com/plugins/custom-color-palette/
 Contributors: themezee
 Tags: gutenberg, editor, colors, color palette
 Requires at least: 4.9.8
-Tested up to: 5.0
+Tested up to: 5.4
 Requires PHP: 5.6
 Stable tag: 1.0
 License: GPLv2 or later
